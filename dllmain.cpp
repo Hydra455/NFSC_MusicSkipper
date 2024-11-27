@@ -1,4 +1,3 @@
-// dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
 #include <Windows.h>
 #include <string>
@@ -9,7 +8,6 @@ DWORD WINAPI HotKey(LPVOID);
 
 #define TheGameFlowManager 0xA99BBC
 #define GRaceStatus_fObj 0xA98284
-#define AIPursuit_vtbl 0x9C5424
 
 void (*Music_ForceKillMusic)() = (void(*)())0x64C800;
 void (*Music_ForceLicensedMusic)() = (void(*)())0x64C7D0;
@@ -52,7 +50,6 @@ DWORD WINAPI HotKey(LPVOID)
         GameState = *(int*)TheGameFlowManager;
         IsOnFocus = !(*(bool*)0xAB0B3C);
         DWORD* GRaceStatus = (DWORD*)*(DWORD*)GRaceStatus_fObj;
-        DWORD* AIPursuit = (DWORD*)AIPursuit_vtbl;
         const char* IsCanyon = GRaceStatus_IsCanyonRace(GRaceStatus);
         const char* IsSpeedtrap = GRaceStatus_IsSpeedtrapRace(GRaceStatus);
         const char* IsChallenge = GRaceStatus_IsChallengeRace(GRaceStatus);

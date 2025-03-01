@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include <string>
 #include "ini.h"
+// test
 
 void Main();
 DWORD WINAPI HotKey(LPVOID);
